@@ -1,0 +1,44 @@
+// here is directory entry from computer :
+/*    	sdBuf[0] = 0x54;
+ 	sdBuf[1] = 0x45 ;
+    	sdBuf[2] = 0x53;
+    	sdBuf[3] = 0x54 ;
+    	sdBuf[4] = 0x20;
+    	sdBuf[5] = 0x20 ;
+    	sdBuf[6] = 0x20;
+    	sdBuf[7] = 0x20 ;
+    	sdBuf[8] = 0x20;
+    	sdBuf[9] = 0x20 ;
+    	sdBuf[10] = 0x20;
+    	sdBuf[11] = 0x10 ;
+    	sdBuf[12] = 0x00;
+    	sdBuf[13] = 0x64 ;
+    	sdBuf[14] = 0xb4;
+    	sdBuf[15] = 0x9a ; 
+    sdBuf[16] = 0x2e;
+    sdBuf[17] = 0x3d ;
+    sdBuf[18] = 0x2e;
+    sdBuf[19] = 0x3d ;
+    sdBuf[20] = 0x00;
+    sdBuf[21] = 0x00 ;
+    sdBuf[22] = 0xb4;
+    sdBuf[23] = 0x9a ;
+    sdBuf[24] = 0x2e;
+    sdBuf[25] = 0x3d ;
+    sdBuf[26] = 0x03;
+
+   sdBuf[27] = 0x00 ;
+   sdBuf[28] = 0x00;
+   sdBuf[29] = 0x00 ;
+    sdBuf[30] = 0x00;
+    sdBuf[31] = 0x00;
+*/
+
+/*
+      from folder created on ubuntu
+      9217 0024000: 2e20 2020 2020 2020 2020 2010 0000 b29a  .          .....
+      9218 0024010: 2e3d 2e3d 0000 b29a 2e3d 0300 0000 0000  .=.=.....=......
+      9219 0024020: 2e2e 2020 2020 2020 2020 2010 0000 b29a  ..         .....
+      9220 0024030: 2e3d 2e3d 0000 b29a 2e3d 0000 0000 0000  .=.=.....=......
+*/
+

@@ -1,0 +1,378 @@
+Archive member included because of file (symbol)
+
+/home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+                              sd_raw.o (memcpy)
+/home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+                              sd_raw.o (memset)
+/home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+                              main.o (rand)
+/home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+                              /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o) (_impure_ptr)
+/home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+                              printf.o (__udivsi3)
+/home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+                              printf.o (__umodsi3)
+/home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+                              /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o) (__div0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00000000         0x00080000
+ram_isp_low      0x40000120         0x000000df         a
+ram              0x40000200         0x00007f01
+ram_isp_high     0x40007fe0         0x00000020         a
+ram_usb_dma      0x7fd00000         0x00002000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x40007edc                _stack_end = 0x40007edc
+                0x00000000                . = 0x0
+
+startup
+ *(.startup)
+
+.text           0x00000000     0x7938
+ *(.text)
+ .text          0x00000000       0xd8 crt.o
+                0x00000000                _startup
+                0x00000040                Reset_Handler
+ .text          0x000000d8      0xfac main.o
+                0x000000d8                main
+ .text          0x00001084      0x22c adc.o
+                0x00001138                get_adc1
+                0x000011fc                get_adc1_fast
+                0x00001084                get_adc0
+ .text          0x000012b0      0x828 tlv320.o
+                0x0000165c                tlv_spi_send_command
+                0x000015f8                tlv_spi_init
+                0x000012b0                tlv_init
+ .text          0x00001ad8      0x46c system.o
+                0x00001f14                UNDEF_Routine
+                0x00001ae8                led_card_init
+                0x00001b10                led_card
+                0x00001f04                SWI_Routine
+                0x00001ef4                FIQ_Routine
+                0x00001c1c                get_char
+                0x00001ad8                led_board_init
+                0x00001b28                delay_ms
+                0x00001ba4                delay_ticks
+                0x00001df8                feed
+                0x00001ee4                IRQ_Routine
+                0x00001e30                enableIRQ
+                0x00001af8                led_board
+                0x00001e68                disableIRQ
+                0x00001cbc                Initialize
+                0x00001c64                put_char
+ .text          0x00001f44      0x888 printf.o
+                0x00002754                printf
+                0x0000278c                sprintf
+ .text          0x000027cc      0x83c interface.o
+                0x00002ae8                fill_flash
+                0x00002bdc                interface_check_for_events
+                0x00002ab8                play_led_off
+                0x000027cc                error_out
+                0x00002a58                play_led_on
+                0x00002bc4                play_mode_led
+                0x00002de8                get_buttons
+ .text          0x00003008      0xf70 recorder.o
+                0x000031b4                recorder_speed
+                0x00003134                recorder_current_loop_start
+                0x00003114                recorder_current_address
+                0x0000320c                recorder_direction_toggle
+                0x000030e4                recorder_current_track_length
+                0x00003154                recorder_toggle_mode
+                0x00003248                recorder_perform
+                0x00003008                recorder_init
+                0x00003194                recorder_prev
+                0x000031e4                recorder_direction
+                0x00003174                recorder_next
+                0x000030bc                recorder_set_play_all
+ .text          0x00003f78     0x1fd0 simple_fat.o
+                0x0000595c                fat_update_fat
+                0x000044a8                fat_make_sounds_directory
+                0x000043ec                fat_initialize_disk
+                0x000051ac                fat_get_file_start_address
+                0x000052ac                fat_get_file_end_address
+                0x000054b8                fat_get_num_files
+                0x00004cd4                fat_clean_root_directory
+                0x00003f78                fat_locate_boot_sector
+                0x00005498                fat_get_total_space
+                0x000054d8                fat_write_file_data
+                0x00004dbc                fat_count_files
+                0x00005adc                fat_flush_fat
+                0x00004a24                fat_check_for_sounds_directory
+                0x00005464                fat_get_used_space
+                0x00004090                fat_get_partition_info
+                0x000055b0                fat_write_file_entry
+ .text          0x00005f48     0x108c sd_raw.o
+                0x00006290                sd_raw_available
+                0x00006a28                sd_raw_write_interval
+                0x0000647c                sd_raw_read
+                0x00005f48                sd_raw_init
+                0x0000669c                sd_raw_read_interval
+                0x00006b74                sd_raw_get_info
+                0x00006b5c                sd_raw_sync
+                0x000062a8                sd_raw_locked
+                0x000067a4                sd_raw_write
+ .text          0x00006fd4       0x90 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+                0x00006fd4                memcpy
+ .text          0x00007064       0x78 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+                0x00007064                memset
+ .text          0x000070dc       0x74 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+                0x000070f8                rand
+                0x000070dc                srand
+ .text          0x00007150       0xf8 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+                0x00007150                __udivsi3
+ .text          0x00007248       0xcc /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+                0x00007248                __umodsi3
+ .text          0x00007314        0x4 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+                0x00007314                __div0
+ *(.rodata)
+ .rodata        0x00007318      0x274 main.o
+                0x00007318                sin_table
+                0x00007418                square_table
+ .rodata        0x0000758c        0x8 printf.o
+ .rodata        0x00007594       0x34 recorder.o
+ .rodata        0x000075c8      0x36c simple_fat.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x00007934        0x2 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+                                  0x4 (size before relaxing)
+ *(.glue_7)
+ *fill*         0x00007936        0x2 00
+ *(.glue_7t)
+                0x00007938                _etext = .
+
+.data           0x40000200      0x3ac load address 0x00007938
+                0x40000200                _data = .
+ *(.data)
+ .data          0x40000200        0x4 main.o
+ .data          0x40000204       0x10 interface.o
+ .data          0x40000214       0x14 recorder.o
+ .data          0x40000228        0x4 simple_fat.o
+                0x40000228                first_update
+ .data          0x4000022c      0x380 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+                0x4000022c                _impure_ptr
+                0x400005ac                _edata = .
+
+.bss            0x400005ac     0x4710
+                0x400005ac                _bss_start = .
+ *(.bss)
+ .bss           0x400005ac       0x38 main.o
+                0x400005ac                playMode
+                0x400005e2                sTest2
+                0x400005e0                sTest1
+                0x400005b0                knob
+ .bss           0x400005e4     0x4024 tlv320.o
+                0x400005e4                buttonEvent
+                0x400005f0                hardware_index
+                0x40002608                recBuf
+                0x400005f4                mode
+                0x40000608                playBuf
+                0x400005e8                buttonEventCounter
+                0x400005ec                software_index
+ .bss           0x40004608       0x10 interface.o
+ .bss           0x40004618      0x250 recorder.o
+                0x40004618                disk_full
+                0x40004664                sdBuf
+ .bss           0x40004868      0x24c simple_fat.o
+                0x400048a0                file_write_sector_location
+                0x4000487c                addr_sounds_directory
+                0x40004898                audio_data_max_space
+                0x400048b4                current_fat_sector_cache
+                0x40004868                addr_boot_sector
+                0x4000488c                sectors_per_cluster
+                0x4000489c                current_fat_sector_offset
+                0x40004894                num_fats
+                0x40004870                addr_FAT_2
+                0x40004884                num_reserved_sectors
+                0x400048ac                file_write_start_cluster
+                0x40004874                addr_root_dir
+                0x40004888                sectors_per_fat
+                0x400048a8                file_write_size
+                0x400048b0                total_files
+                0x4000486c                addr_FAT_1
+                0x40004878                addr_data_start
+                0x40004890                num_root_entries
+                0x40004880                total_sectors
+                0x400048a4                file_write_cluster_location
+ .bss           0x40004ab4      0x208 sd_raw.o
+                0x40004cbc                . = ALIGN (0x4)
+                0x40004cbc                _bss_end = .
+                0x40004cbc                _end = .
+LOAD crt.o
+LOAD main.o
+LOAD adc.o
+LOAD tlv320.o
+LOAD system.o
+LOAD printf.o
+LOAD interface.o
+LOAD recorder.o
+LOAD simple_fat.o
+LOAD sd_raw.o
+LOAD /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a
+LOAD /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libm.a
+LOAD /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a
+OUTPUT(main.out elf32-littlearm)
+
+.debug_abbrev   0x00000000      0xd0e
+ .debug_abbrev  0x00000000      0x153 main.o
+ .debug_abbrev  0x00000153       0x6d adc.o
+ .debug_abbrev  0x000001c0       0xaa tlv320.o
+ .debug_abbrev  0x0000026a       0xee system.o
+ .debug_abbrev  0x00000358      0x121 printf.o
+ .debug_abbrev  0x00000479       0x7a interface.o
+ .debug_abbrev  0x000004f3       0xcd recorder.o
+ .debug_abbrev  0x000005c0      0x178 simple_fat.o
+ .debug_abbrev  0x00000738      0x18b sd_raw.o
+ .debug_abbrev  0x000008c3       0x99 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_abbrev  0x0000095c       0x9a /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_abbrev  0x000009f6      0x185 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .debug_abbrev  0x00000b7b      0x157 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+ .debug_abbrev  0x00000cd2       0x14 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000ce6       0x14 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x00000cfa       0x14 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x00000000     0x40ab
+ .debug_info    0x00000000      0x69c main.o
+ .debug_info    0x0000069c      0x12b adc.o
+ .debug_info    0x000007c7      0x256 tlv320.o
+ .debug_info    0x00000a1d      0x348 system.o
+ .debug_info    0x00000d65      0x3d4 printf.o
+ .debug_info    0x00001139      0x270 interface.o
+ .debug_info    0x000013a9      0x5af recorder.o
+ .debug_info    0x00001958      0x98c simple_fat.o
+ .debug_info    0x000022e4      0x886 sd_raw.o
+ .debug_info    0x00002b6a       0xfc /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_info    0x00002c66      0x102 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_info    0x00002d68      0x907 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .debug_info    0x0000366f      0x8e0 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+ .debug_info    0x00003f4f       0x74 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+ .debug_info    0x00003fc3       0x74 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+ .debug_info    0x00004037       0x74 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x00000000      0xd89
+ .debug_line    0x00000000      0x123 main.o
+ .debug_line    0x00000123       0x50 adc.o
+ .debug_line    0x00000173       0xa6 tlv320.o
+ .debug_line    0x00000219       0x90 system.o
+ .debug_line    0x000002a9       0xb8 printf.o
+ .debug_line    0x00000361       0xa2 interface.o
+ .debug_line    0x00000403      0x101 recorder.o
+ .debug_line    0x00000504      0x222 simple_fat.o
+ .debug_line    0x00000726      0x198 sd_raw.o
+ .debug_line    0x000008be       0xc9 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_line    0x00000987       0xc7 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_line    0x00000a4e      0x106 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .debug_line    0x00000b54       0xef /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+ .debug_line    0x00000c43       0x7d /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000cc0       0x6f /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000d2f       0x5a /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x00000000      0xce8
+ .debug_frame   0x00000000      0x1b0 main.o
+ .debug_frame   0x000001b0       0x70 adc.o
+ .debug_frame   0x00000220       0x94 tlv320.o
+ .debug_frame   0x000002b4      0x250 system.o
+ .debug_frame   0x00000504       0xfc printf.o
+ .debug_frame   0x00000600       0xf0 interface.o
+ .debug_frame   0x000006f0      0x190 recorder.o
+ .debug_frame   0x00000880      0x250 simple_fat.o
+ .debug_frame   0x00000ad0      0x190 sd_raw.o
+ .debug_frame   0x00000c60       0x28 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_frame   0x00000c88       0x20 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_frame   0x00000ca8       0x40 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+
+.debug_pubnames
+                0x00000000      0x91f
+ .debug_pubnames
+                0x00000000       0x66 main.o
+ .debug_pubnames
+                0x00000066       0x3e adc.o
+ .debug_pubnames
+                0x000000a4       0xb6 tlv320.o
+ .debug_pubnames
+                0x0000015a      0x100 system.o
+ .debug_pubnames
+                0x0000025a       0x29 printf.o
+ .debug_pubnames
+                0x00000283       0x91 interface.o
+ .debug_pubnames
+                0x00000314      0x14f recorder.o
+ .debug_pubnames
+                0x00000463      0x37a simple_fat.o
+ .debug_pubnames
+                0x000007dd       0xc1 sd_raw.o
+ .debug_pubnames
+                0x0000089e       0x1d /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_pubnames
+                0x000008bb       0x1d /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_pubnames
+                0x000008d8       0x25 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .debug_pubnames
+                0x000008fd       0x22 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+
+.debug_aranges  0x00000000      0x1e0
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 adc.o
+ .debug_aranges
+                0x00000040       0x20 tlv320.o
+ .debug_aranges
+                0x00000060       0x20 system.o
+ .debug_aranges
+                0x00000080       0x20 printf.o
+ .debug_aranges
+                0x000000a0       0x20 interface.o
+ .debug_aranges
+                0x000000c0       0x20 recorder.o
+ .debug_aranges
+                0x000000e0       0x20 simple_fat.o
+ .debug_aranges
+                0x00000100       0x20 sd_raw.o
+ .debug_aranges
+                0x00000120       0x20 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .debug_aranges
+                0x00000140       0x20 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .debug_aranges
+                0x00000160       0x20 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .debug_aranges
+                0x00000180       0x20 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x000001a0       0x20 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x000001c0       0x20 /home/owen/ARM/gnuarm-3.4.3/lib/gcc/arm-elf/3.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_str      0x00000000      0x6b5
+ .debug_str     0x00000000       0x35 main.o
+ .debug_str     0x00000035        0x8 adc.o
+ .debug_str     0x0000003d        0xd system.o
+ .debug_str     0x0000004a       0x10 printf.o
+ .debug_str     0x0000005a       0x49 simple_fat.o
+ .debug_str     0x000000a3       0x54 sd_raw.o
+ .debug_str     0x000000f7       0xb5 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+                                 0xd5 (size before relaxing)
+ .debug_str     0x000001ac       0xa4 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+                                0x11f (size before relaxing)
+ .debug_str     0x00000250      0x3e7 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+                                0x486 (size before relaxing)
+ .debug_str     0x00000637       0x7e /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)
+                                0x482 (size before relaxing)
+
+.comment        0x00000000       0xea
+ .comment       0x00000000       0x12 main.o
+ .comment       0x00000012       0x12 adc.o
+ .comment       0x00000024       0x12 tlv320.o
+ .comment       0x00000036       0x12 system.o
+ .comment       0x00000048       0x12 printf.o
+ .comment       0x0000005a       0x12 interface.o
+ .comment       0x0000006c       0x12 recorder.o
+ .comment       0x0000007e       0x12 simple_fat.o
+ .comment       0x00000090       0x12 sd_raw.o
+ .comment       0x000000a2       0x12 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memcpy.o)
+ .comment       0x000000b4       0x12 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(memset.o)
+ .comment       0x000000c6       0x12 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(rand.o)
+ .comment       0x000000d8       0x12 /home/owen/ARM/gnuarm-3.4.3/arm-elf/lib/libc.a(impure.o)

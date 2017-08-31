@@ -1,0 +1,431 @@
+
+main.out:     file format elf32-littlearm
+main.out
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00008000 vaddr 0x00000000 paddr 0x00000000 align 2**15
+         filesz 0x00007938 memsz 0x00007938 flags r-x
+    LOAD off    0x00010200 vaddr 0x40000200 paddr 0x00007938 align 2**15
+         filesz 0x000003ac memsz 0x000003ac flags rw-
+    LOAD off    0x000105ac vaddr 0x400005ac paddr 0x400005ac align 2**15
+         filesz 0x00000000 memsz 0x00004710 flags rw-
+private flags = 0: [APCS-32] [FPA float format]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00007938  00000000  00000000  00008000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         000003ac  40000200  00007938  00010200  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00004710  400005ac  400005ac  000105ac  2**2
+                  ALLOC
+  3 .debug_abbrev 00000d0e  00000000  00000000  000105ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000040ab  00000000  00000000  000112ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   00000d89  00000000  00000000  00015365  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000ce8  00000000  00000000  000160f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_pubnames 0000091f  00000000  00000000  00016dd8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_aranges 000001e0  00000000  00000000  000176f8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000006b5  00000000  00000000  000178d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .comment      000000ea  00000000  00000000  00017f8d  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 
+40000200 l    d  .data	00000000 
+400005ac l    d  .bss	00000000 
+00000000 l    d  .debug_abbrev	00000000 
+00000000 l    d  .debug_info	00000000 
+00000000 l    d  .debug_line	00000000 
+00000000 l    d  .debug_frame	00000000 
+00000000 l    d  .debug_pubnames	00000000 
+00000000 l    d  .debug_aranges	00000000 
+00000000 l    d  .debug_str	00000000 
+00000000 l    d  .comment	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000004 l       *ABS*	00000000 UND_STACK_SIZE
+00000004 l       *ABS*	00000000 ABT_STACK_SIZE
+00000004 l       *ABS*	00000000 FIQ_STACK_SIZE
+00000080 l       *ABS*	00000000 IRQ_STACK_SIZE
+00000080 l       *ABS*	00000000 SVC_STACK_SIZE
+00000010 l       *ABS*	00000000 MODE_USR
+00000011 l       *ABS*	00000000 MODE_FIQ
+00000012 l       *ABS*	00000000 MODE_IRQ
+00000013 l       *ABS*	00000000 MODE_SVC
+00000017 l       *ABS*	00000000 MODE_ABT
+0000001b l       *ABS*	00000000 MODE_UND
+0000001f l       *ABS*	00000000 MODE_SYS
+00000080 l       *ABS*	00000000 I_BIT
+00000040 l       *ABS*	00000000 F_BIT
+00000000 l     F .text	00000000 $a
+00000000 l       .text	00000000 _vectors
+00000020 l       .text	00000000 Reset_Addr
+00000024 l       .text	00000000 Undef_Addr
+00000028 l       .text	00000000 SWI_Addr
+0000002c l       .text	00000000 PAbt_Addr
+00000030 l       .text	00000000 DAbt_Addr
+00000038 l       .text	00000000 FIQ_Addr
+00000020 l     O .text	00000000 $d
+00000034 l       .text	00000000 IRQ_Addr
+00000040 l     F .text	00000000 $a
+000000c0 l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 main.c
+400005ac l     O .bss	00000000 $d
+000000d8 l     F .text	00000000 $a
+00000948 l     F .text	00000074 play_fwd_rev_stepped
+000009bc l     F .text	00000060 play_fwd_rev_continuous
+00000acc l     F .text	0000014c play_warble
+00000c18 l     F .text	0000014c play_warble_chop
+00000a1c l     F .text	000000b0 play_stutter
+00000e70 l     F .text	00000034 play_rev
+00000914 l     O .text	00000000 $d
+00000948 l     F .text	00000000 $a
+000009b8 l     O .text	00000000 $d
+000009bc l     F .text	00000000 $a
+00000a18 l     O .text	00000000 $d
+400005b4 l       .bss	00000000 count.0
+400005b8 l       .bss	00000000 next_time.1
+00000a1c l     F .text	00000000 $a
+00000abc l     O .text	00000000 $d
+400005bc l       .bss	00000000 phase.2
+400005c0 l       .bss	00000000 phase_delta.3
+00000acc l     F .text	00000000 $a
+00000c08 l     O .text	00000000 $d
+400005c4 l       .bss	00000000 phase.4
+400005c8 l       .bss	00000000 phase_delta.5
+00000c18 l     F .text	00000000 $a
+00000d54 l     O .text	00000000 $d
+400005cc l       .bss	00000000 next_time.6
+40000200 l     O .data	00000004 speed.7
+40000200 l     O .data	00000000 $d
+400005d0 l       .bss	00000000 slope.8
+400005d4 l       .bss	00000000 count.9
+00000d64 l     F .text	0000010c play_drunken_line
+00000d64 l     F .text	00000000 $a
+00000e58 l     O .text	00000000 $d
+00000e70 l     F .text	00000000 $a
+00000ea0 l     O .text	00000000 $d
+00000ea4 l     F .text	00000010 play_rev_stepped
+00000ea4 l     F .text	00000000 $a
+00000eb4 l     F .text	00000034 play_fwd
+00000ee4 l     O .text	00000000 $d
+00000ee8 l     F .text	00000010 play_fwd_stepped
+00000ee8 l     F .text	00000000 $a
+400005d8 l     O .bss	00000000 $d
+400005d8 l       .bss	00000000 knob_last.10
+00000ef8 l     F .text	00000054 play_throw
+00000f44 l     O .text	00000000 $d
+400005dc l       .bss	00000000 zone_last.11
+00000f4c l     F .text	00000138 play_randomizer_1
+00000f4c l     F .text	00000000 $a
+00001078 l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 adc.c
+00001084 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 tlv320.c
+400005e4 l     O .bss	00000000 $d
+400005f8 l       .bss	00000000 tlv_data
+000012b0 l     F .text	00000000 $a
+000015f4 l     O .text	00000000 $d
+0000180c l     F .text	000002cc sspISR
+000015f8 l     F .text	00000000 $a
+00001abc l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 system.c
+00001ad8 l     F .text	00000000 $a
+00001ea0 l     F .text	00000024 __get_cpsr
+00001ec4 l     F .text	00000020 __set_cpsr
+00000000 l    df *ABS*	00000000 printf.c
+00001f44 l     F .text	00000058 put_char
+00001f44 l     F .text	00000000 $a
+00001f9c l     F .text	00000064 printchar
+00002000 l     F .text	00000188 prints
+00002188 l     F .text	000001dc printi
+00002364 l     F .text	000003f0 print
+00002750 l     O .text	00000000 $d
+00002754 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 interface.c
+40000204 l     O .data	00000004 recordButtonUp
+40000204 l     O .data	00000000 $d
+40004608 l       .bss	00000000 recordButton
+40000208 l     O .data	00000004 ffButtonUp
+4000460c l       .bss	00000000 ffButton
+4000020c l     O .data	00000004 rwButtonUp
+40004610 l       .bss	00000000 rwButton
+40000210 l     O .data	00000004 modeButtonUp
+40004614 l       .bss	00000000 modeButton
+000027cc l     F .text	00000000 $a
+00002ab4 l     O .text	00000000 $d
+00002ab8 l     F .text	00000000 $a
+00002dc0 l     O .text	00000000 $d
+00002de8 l     F .text	00000000 $a
+00002ff8 l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 recorder.c
+40004618 l     O .bss	00000000 $d
+4000461c l       .bss	00000000 writeTime
+40004620 l       .bss	00000000 next
+40004624 l       .bss	00000000 prev
+40004628 l       .bss	00000000 ready
+4000462c l       .bss	00000000 phasor
+40004630 l       .bss	00000000 sdBufOldLast
+40004634 l       .bss	00000000 sdBufOldFirst
+40004638 l       .bss	00000000 justGrabbedBuffer
+40000214 l     O .data	00000001 needNewBuffer
+40004639 l     O .bss	00000000 $d
+4000463a l       .bss	00000000 sample_1
+4000463c l       .bss	00000000 sample_0
+40004640 l       .bss	00000000 sample
+40004644 l       .bss	00000000 sdInBufIndex
+40004648 l       .bss	00000000 diskBufIndex
+4000464c l       .bss	00000000 gainIn
+40004650 l       .bss	00000000 gain
+40004654 l       .bss	00000000 address
+40004658 l       .bss	00000000 loopStart
+4000465c l       .bss	00000000 loopEnd
+40000218 l     O .data	00000004 direction
+40000218 l     O .data	00000000 $d
+4000021c l     O .data	00000004 directionTarget
+40004660 l       .bss	00000000 track
+40000220 l     O .data	00000004 speed
+40000224 l     O .data	00000004 play_all
+00003008 l     F .text	00000000 $a
+0000309c l     O .text	00000000 $d
+000030bc l     F .text	00000000 $a
+000030e0 l     O .text	00000000 $d
+000030e4 l     F .text	00000000 $a
+0000310c l     O .text	00000000 $d
+00003114 l     F .text	00000000 $a
+00003130 l     O .text	00000000 $d
+00003134 l     F .text	00000000 $a
+00003150 l     O .text	00000000 $d
+00003154 l     F .text	00000000 $a
+00003170 l     O .text	00000000 $d
+40004864 l       .bss	00000000 recordButtonEvent
+00003174 l     F .text	00000000 $a
+00003190 l     O .text	00000000 $d
+00003194 l     F .text	00000000 $a
+000031b0 l     O .text	00000000 $d
+000031b4 l     F .text	00000000 $a
+000031e0 l     O .text	00000000 $d
+000031e4 l     F .text	00000000 $a
+00003208 l     O .text	00000000 $d
+0000320c l     F .text	00000000 $a
+00003244 l     O .text	00000000 $d
+00003248 l     F .text	00000000 $a
+00003eec l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 simple_fat.c
+40004868 l     O .bss	00000000 $d
+40000228 l     O .data	00000000 $d
+00003f78 l     F .text	00000000 $a
+0000407c l     O .text	00000000 $d
+00004090 l     F .text	00000000 $a
+0000437c l     O .text	00000000 $d
+000043ec l     F .text	00000000 $a
+00004498 l     O .text	00000000 $d
+000044a8 l     F .text	00000000 $a
+00004a08 l     O .text	00000000 $d
+00004a24 l     F .text	00000000 $a
+00004cb4 l     O .text	00000000 $d
+00004cd4 l     F .text	00000000 $a
+00004db0 l     O .text	00000000 $d
+00004dbc l     F .text	00000000 $a
+00005180 l     O .text	00000000 $d
+000051ac l     F .text	00000000 $a
+0000529c l     O .text	00000000 $d
+000052ac l     F .text	00000000 $a
+00005454 l     O .text	00000000 $d
+00005464 l     F .text	00000000 $a
+00005490 l     O .text	00000000 $d
+00005498 l     F .text	00000000 $a
+000054b4 l     O .text	00000000 $d
+000054b8 l     F .text	00000000 $a
+000054d4 l     O .text	00000000 $d
+000054d8 l     F .text	00000000 $a
+00005598 l     O .text	00000000 $d
+000055b0 l     F .text	00000000 $a
+00005b50 l     F .text	000002cc fat_write_wav_header
+00005e1c l     F .text	0000012c smooth_end
+00005934 l     O .text	00000000 $d
+0000595c l     F .text	00000000 $a
+00005ac8 l     O .text	00000000 $d
+00005adc l     F .text	00000000 $a
+00005b40 l     O .text	00000000 $d
+00005b50 l     F .text	00000000 $a
+00005e18 l     O .text	00000000 $d
+00005e1c l     F .text	00000000 $a
+00005f44 l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 sd_raw.c
+00005f48 l     F .text	00000000 $a
+0000630c l     F .text	00000054 sd_raw_rec_byte
+00006360 l     F .text	0000011c sd_raw_send_command
+00006284 l     O .text	00000000 $d
+40004cb8 l       .bss	00000000 sd_raw_card_type
+40004cb4 l       .bss	00000000 raw_block_address
+40004ab4 l       .bss	00000000 raw_block
+00006290 l     F .text	00000000 $a
+000062c0 l     F .text	0000004c sd_raw_send_byte
+00006694 l     O .text	00000000 $d
+0000669c l     F .text	00000000 $a
+00006a20 l     O .text	00000000 $d
+00006a28 l     F .text	00000000 $a
+00006c74 l     O .text	00000000 $d
+00006cb0 l     F .text	00000000 $a
+00006eb8 l     O .text	00000000 $d
+00006ed0 l     F .text	00000000 $a
+40004ab4 l     O .bss	00000000 $d
+00000000 l    df *ABS*	00000000 memcpy.c
+00006fd4 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 memset.c
+00007064 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 rand.c
+000070dc l     F .text	00000000 $a
+000070f4 l     O .text	00000000 $d
+000070f8 l     F .text	00000000 $a
+00007144 l     O .text	00000000 $d
+00000000 l    df *ABS*	00000000 impure.c
+4000022c l     O .data	00000000 $d
+40000230 l     O .data	0000037c impure_data
+00000000 l    df *ABS*	00000000 <command line>
+00000000 l    df *ABS*	00000000 <built-in>
+00000000 l    df *ABS*	00000000 /srv/shared/gnuarm/gcc-build/gcc//
+00007150 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 <command line>
+00000000 l    df *ABS*	00000000 <built-in>
+00000000 l    df *ABS*	00000000 /srv/shared/gnuarm/gcc-build/gcc//
+00007248 l     F .text	00000000 $a
+00000000 l    df *ABS*	00000000 <command line>
+00000000 l    df *ABS*	00000000 <built-in>
+00000000 l    df *ABS*	00000000 /srv/shared/gnuarm/gcc-build/gcc//
+00007314 l     F .text	00000000 $a
+0000595c g     F .text	00000180 fat_update_fat
+00006290 g     F .text	00000018 sd_raw_available
+400005e4 g     O .bss	00000004 buttonEvent
+000044a8 g     F .text	0000057c fat_make_sounds_directory
+00002754 g     F .text	00000038 printf
+0000165c g     F .text	000001b0 tlv_spi_send_command
+00002ae8 g     F .text	000000dc fill_flash
+00007318 g     O .text	00000100 sin_table
+400005ac g     O .bss	00000004 playMode
+000031b4 g     F .text	00000030 recorder_speed
+00001f14 g     F .text	00000030 UNDEF_Routine
+400005f0 g     O .bss	00000004 hardware_index
+400048a0 g     O .bss	00000004 file_write_sector_location
+00007938 g       .text	00000000 _etext
+00003134 g     F .text	00000020 recorder_current_loop_start
+00001ae8 g     F .text	00000010 led_card_init
+000043ec g     F .text	000000bc fat_initialize_disk
+000051ac g     F .text	00000100 fat_get_file_start_address
+00006fd4 g     F .text	00000090 memcpy
+40004618 g     O .bss	00000001 disk_full
+4000487c g     O .bss	00000004 addr_sounds_directory
+00002bdc g     F .text	0000020c interface_check_for_events
+40002608 g     O .bss	00002000 recBuf
+40004898 g     O .bss	00000004 audio_data_max_space
+00006a28 g     F .text	00000134 sd_raw_write_interval
+00007150 g     F .text	000000f8 __udivsi3
+00003114 g     F .text	00000020 recorder_current_address
+0000320c g     F .text	0000003c recorder_direction_toggle
+400005ac g       .bss	00000000 _bss_start
+400005e2 g     O .bss	00000002 sTest2
+00001b10 g     F .text	00000018 led_card
+00001f04 g     F .text	00000010 SWI_Routine
+000052ac g     F .text	000001b8 fat_get_file_end_address
+00001138 g     F .text	000000c4 get_adc1
+0000647c g     F .text	00000220 sd_raw_read
+00000000 g       .text	00000000 _startup
+00002ab8 g     F .text	00000030 play_led_off
+000054b8 g     F .text	00000020 fat_get_num_files
+000030e4 g     F .text	00000030 recorder_current_track_length
+400048b4 g     O .bss	00000200 current_fat_sector_cache
+40004cbc g       *ABS*	00000000 _bss_end
+40004868 g     O .bss	00000004 addr_boot_sector
+000027cc g     F .text	0000028c error_out
+00000040 g       .text	00000000 Reset_Handler
+00004cd4 g     F .text	000000e8 fat_clean_root_directory
+00001ef4 g     F .text	00000010 FIQ_Routine
+00007248 g     F .text	000000cc __umodsi3
+00001c1c g     F .text	00000048 get_char
+00002a58 g     F .text	00000060 play_led_on
+400005f4 g     O .bss	00000004 mode
+400005e0 g     O .bss	00000002 sTest1
+00002bc4 g     F .text	00000018 play_mode_led
+00003154 g     F .text	00000020 recorder_toggle_mode
+4000488c g     O .bss	00000004 sectors_per_cluster
+40000608 g     O .bss	00002000 playBuf
+00005f48 g     F .text	00000348 sd_raw_init
+0000669c g     F .text	00000108 sd_raw_read_interval
+000070f8 g     F .text	00000058 rand
+00001ad8 g     F .text	00000010 led_board_init
+4000489c g     O .bss	00000004 current_fat_sector_offset
+00007418 g     O .text	00000100 square_table
+40004894 g     O .bss	00000004 num_fats
+40004870 g     O .bss	00000004 addr_FAT_2
+40004884 g     O .bss	00000004 num_reserved_sectors
+400048ac g     O .bss	00000004 file_write_start_cluster
+000011fc g     F .text	000000b4 get_adc1_fast
+00002de8 g     F .text	00000220 get_buttons
+00003248 g     F .text	00000d30 recorder_perform
+00003f78 g     F .text	00000118 fat_locate_boot_sector
+40004874 g     O .bss	00000004 addr_root_dir
+00005498 g     F .text	00000020 fat_get_total_space
+00007064 g     F .text	00000078 memset
+000000d8 g     F .text	00000870 main
+00001b28 g     F .text	0000007c delay_ms
+00007314 g     F .text	00000004 __div0
+000070dc g     F .text	0000001c srand
+00001ba4 g     F .text	00000078 delay_ticks
+40007edc g       *ABS*	00000000 _stack_end
+00006b74 g     F .text	00000460 sd_raw_get_info
+000054d8 g     F .text	000000d8 fat_write_file_data
+400005b0 g     O .bss	00000004 knob
+00001df8 g     F .text	00000038 feed
+0000278c g     F .text	00000040 sprintf
+40004664 g     O .bss	00000200 sdBuf
+00001ee4 g     F .text	00000010 IRQ_Routine
+4000022c g     O .data	00000004 _impure_ptr
+00003008 g     F .text	000000b4 recorder_init
+40004888 g     O .bss	00000004 sectors_per_fat
+40000228 g     O .data	00000004 first_update
+00003194 g     F .text	00000020 recorder_prev
+00004dbc g     F .text	000003f0 fat_count_files
+40000200 g       .data	00000000 _data
+00005adc g     F .text	00000074 fat_flush_fat
+00001e30 g     F .text	00000038 enableIRQ
+400048a8 g     O .bss	00000004 file_write_size
+00006b5c g     F .text	00000018 sd_raw_sync
+400048b0 g     O .bss	00000004 total_files
+00001084 g     F .text	000000b4 get_adc0
+400005ac g       .data	00000000 _edata
+40004cbc g       *ABS*	00000000 _end
+00004a24 g     F .text	000002b0 fat_check_for_sounds_directory
+4000486c g     O .bss	00000004 addr_FAT_1
+000031e4 g     F .text	00000028 recorder_direction
+00001af8 g     F .text	00000018 led_board
+40004878 g     O .bss	00000004 addr_data_start
+40004890 g     O .bss	00000004 num_root_entries
+00001e68 g     F .text	00000038 disableIRQ
+00001cbc g     F .text	0000013c Initialize
+00005464 g     F .text	00000034 fat_get_used_space
+400005e8 g     O .bss	00000004 buttonEventCounter
+00004090 g     F .text	0000035c fat_get_partition_info
+000015f8 g     F .text	00000064 tlv_spi_init
+40004880 g     O .bss	00000004 total_sectors
+00003174 g     F .text	00000020 recorder_next
+400048a4 g     O .bss	00000004 file_write_cluster_location
+000062a8 g     F .text	00000018 sd_raw_locked
+000055b0 g     F .text	000003ac fat_write_file_entry
+400005ec g     O .bss	00000004 software_index
+000067a4 g     F .text	00000284 sd_raw_write
+00001c64 g     F .text	00000058 put_char
+000030bc g     F .text	00000028 recorder_set_play_all
+000012b0 g     F .text	00000348 tlv_init
+
+
